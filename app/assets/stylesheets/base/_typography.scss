@@ -14,7 +14,7 @@ $serif: 'Cardo', serif;
 
 
 .display {
-  @include font-size(32px);
+  @include font-size(24px);
   letter-spacing: .9px;
   font-weight: 300;
 
@@ -68,7 +68,10 @@ body {
 
 
 
-h1,
+h1 {
+  font-size: 36px;
+  font-weight: lighter;
+}
 h2,
 h3,
 h4,
