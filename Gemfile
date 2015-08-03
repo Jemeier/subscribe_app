@@ -51,5 +51,9 @@ group :development, :test do
 
   gem 'sass'
 
+  gem 'neat'
+
+  gem 'bitters'
+
 end
 
