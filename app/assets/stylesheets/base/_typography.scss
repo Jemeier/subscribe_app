@@ -1,0 +1,116 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:500,300,700,400);
+
+$sans-serif: 'Roboto', sans-serif;
+$serif: 'Cardo', serif;
+
+
+@mixin font-size ($size) {
+   font-size:$size;
+   line-height:1.6 * $size;
+   letter-spacing: .01 * $size;
+   font-family: roboto;
+}
+
+
+
+.display {
+  @include font-size(32px);
+  letter-spacing: .9px;
+  font-weight: 300;
+
+}
+
+.headline {
+  @include font-size(24px);
+      font-weight: medium;
+
+}
+
+.title {
+
+  @include font-size(21px);
+
+}
+
+.subhead {
+  @include font-size(16px);
+
+}
+
+.body {
+  @include font-size(15px);
+
+}
+
+.caption {
+  @include font-size(13px);
+  letter-spacing: .7px;
+
+}
+
+.button {
+  @include font-size(15px);
+  font-weight:500;
+  letter-spacing: .4px;
+  text-transform: uppercase;
+
+}
+
+
+body {
+  @include font-feature-settings("kern", "liga", "pnum");
+  -webkit-font-smoothing: antialiased;
+  color: $base-font-color;
+  font-family: $sans-serif;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+}
+
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $heading-font-family;
+  font-size: $base-font-size;
+  line-height: $heading-line-height;
+  margin: 0 0 $small-spacing;
+}
+
+p {
+  margin: 0 0 $small-spacing;
+}
+
+a {
+  color: $action-color;
+  text-decoration: none;
+  transition: color 0.1s linear;
+
+  &:active,
+  &:focus,
+  &:hover {
+    color: darken($action-color, 15%);
+  }
+
+  &:active,
+  &:focus {
+    outline: none;
+  }
+}
+
+hr {
+  border-bottom: $base-border;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  margin: $base-spacing 0;
+}
+
+img,
+picture {
+  margin: 0;
+  max-width: 100%;
+}
