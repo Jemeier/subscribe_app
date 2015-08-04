@@ -29,43 +29,94 @@
             <img src="hippo_nav.svg" alt="Logo image">
           </a>
         </li>
-        <li class="nav-link"><a href="javascript:void(0)">Products</a></li>
-        <li class="nav-link"><a href="javascript:void(0)">About Us</a></li>
-        <li class="nav-link"><a href="javascript:void(0)">Contact</a></li>
-        
-        <li class="nav-link"><a href="javascript:void(0)">Sign up</a></li>
-        
-        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-          <div class="field">
-         <li>   <%= f.label :email %><br /> </li>
-         <li>   <%= f.email_field :email, autofocus: true %> </li>
-          </div>
-
-          <div class="field">
-            <%= f.label :password %><br />
-            <%= f.password_field :password, autocomplete: "off" %>
-          </div>
-
-          <% if devise_mapping.rememberable? -%>
-            <div class="field">
-              <%= f.check_box :remember_me %>
-              <%= f.label :remember_me %>
-            </div>
-        <% end -%>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
-
+        <li class="nav-link"><a href="javascript:void(0)">Overview</a></li>
+        <li class="nav-link"><a href="javascript:void(0)">Explore</a></li>
+        <li class="nav-link"><a href="javascript:void(0)">Search</a></li>
+          <% if user_signed_in? %>
+            <li class="nav-link">
+            <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
+            </li>
+          <% else %>
+            <li class="nav-link">
+            <%= link_to('Login', new_user_session_path)  %>  
+            </li>
+          <% end %>
       </ul>
     </nav>
   </div>
 </header>
 
+
+
+<div class="login-wrapper">
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        
+        <div class="field-wrapper">
+
+            <div class="field">
+            <%= f.email_field :email, autofocus: true, :placeholder => "Email" %> 
+            </div>
+
+            <div class="field">
+              <%= f.password_field :password, autocomplete: "off", :placeholder => "Password" %>
+            </div>
+        </div>
+
+            <% if devise_mapping.rememberable? -%>
+        <div class="fieldextra-wrapper">
+                <%= f.label :remember_me %>
+                  <%= f.check_box :remember_me %>
+
+              </div>
+          <% end -%>
+
+            <div class="actions">
+              <%= f.submit "Log in" %>
+            </div>
+        </div>
+
+  <% end %> 
+</div>
+
+
 <%= yield %>
 
 
+<!--<div class="wrapper-for-content-outside-of-footer">
+   Uncomment this whole section for a sticky footer. The content of the page should be inside of this .wrapper-for-content-outside-of-footer
+</div>-->
+
+<div class="spacer"> </div>
+<footer class="footer-2" role="contentinfo">
+  <div class="footer-logo">
+    <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_1.png" alt="Logo image">
+  </div>
+    <ul>
+      <li><a href="javascript:void(0)">About</a></li>
+      <li><a href="javascript:void(0)">Contact</a></li>
+      <li><a href="javascript:void(0)">Products</a></li>
+    </ul>
+
+    <div class="footer-secondary-links">
+      <ul>
+        <li><a href="javascript:void(0)">Terms and Conditions</a></li>
+        <li><a href="javascript:void(0)">Privacy Policy</a></li>
+      </ul>
+
+      <ul class="footer-social">
+        <li><a href="javascript:void(0)">
+          <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/facebook-logo-circle.png" alt="Facebook">
+          </a></li>
+        <li><a href="javascript:void(0)">
+          <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/twitter-logo-circle.png" alt="Twitter">
+        </a></li>
+        <li><a href="javascript:void(0)">
+          <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/youtube-logo-circle.png" alt="YouTube">
+        </a></li>
+      </ul>
+    </div>
+
+</footer>
 
 
 </body>

@@ -14,3 +14,15 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$( document ).ready(function() {
+   
+   //navbar dropdown
+
+   $(".login-wrapper").hide();
+
+   $( "li:nth-child(5)" ).click(function(){
+       $(".login-wrapper").slideDown(500);
+   });
+
+});
