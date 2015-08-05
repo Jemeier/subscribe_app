@@ -3,7 +3,7 @@ class SubscriptionsController < ApplicationController
   # GET /subscriptions
   # GET /subscriptions.json
   def index
-    # @subscriptions
+    @subscriptions = Subscriptions.all
   end
 
   # GET /subscriptions/1
@@ -71,4 +71,4 @@ class SubscriptionsController < ApplicationController
       def subscription_params
         params.require(:version, :month_interval, :price, :product_id)
       end
-      
+ end     
