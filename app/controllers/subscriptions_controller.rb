@@ -3,7 +3,7 @@ class SubscriptionsController < ApplicationController
   # GET /subscriptions
   # GET /subscriptions.json
   def index
-    @subscriptions = Subscription.all
+    # @subscriptions
   end
 
   # GET /subscriptions/1
@@ -69,10 +69,6 @@ class SubscriptionsController < ApplicationController
 
       # Never trust parameters from the scary internet, only allow the white list through.
       def subscription_params
-        params.require(:version, :month_interval, :price)
+        params.require(:version, :month_interval, :price, :product_id)
       end
-
-    # def user_params
-    #   params.require(:subscription).permit(:image)
-    # end
-
+      

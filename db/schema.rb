@@ -11,24 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 20150805154659) do
+ActiveRecord::Schema.define(version: 20150805175317) do
 
   create_table "products", force: :cascade do |t|
     t.string   "name",               null: false
     t.string   "description"
     t.string   "category"
-    t.string   "type"
+    t.string   "format"
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.integer  "image_num"
   end
 
   create_table "subscriptions", force: :cascade do |t|
-    t.string  "version",          null: false
-    t.integer "month_interval",   null: false
-    t.decimal "price",            null: false
+    t.string  "version",        null: false
+    t.integer "month_interval", null: false
+    t.decimal "price",          null: false
     t.integer "product_id"
   end
 

@@ -15,23 +15,21 @@
       <p class="alert alert-danger"><%= alert %></p>
     <% end %>
 
-<header class="centered-navigation" role="banner">
-  <div class="centered-navigation-wrapper">
-    <a href="javascript:void(0)" class="mobile-logo">
-      <img src="https://thenounproject.com/term/hippopotamus/70319/" alt="Logo image">
-    </a>
-    <a href="javascript:void(0)" id="js-centered-navigation-mobile-menu" class="centered-navigation-mobile-menu">MENU</a>
-    <nav role="navigation">
-      <ul id="js-centered-navigation-menu" class="centered-navigation-menu show">
-        
-      <li class="nav-link logo">
-          <a href="javascript:void(0)" class="logo">
-            <img src="hippo_nav.svg" alt="Logo image">
-          </a>
-        </li>
-        <li class="nav-link"><a href="javascript:void(0)">Overview</a></li>
-        <li class="nav-link"><a href="javascript:void(0)">Explore</a></li>
-        <li class="nav-link"><a href="javascript:void(0)">Search</a></li>
+  <header class="centered-navigation" role="banner">
+    <div class="centered-navigation-wrapper">
+      <a href="javascript:void(0)" class="mobile-logo">
+        <img src="https://thenounproject.com/term/hippopotamus/70319/" alt="Logo image">
+      </a>
+      <a href="javascript:void(0)" id="js-centered-navigation-mobile-menu" class="centered-navigation-mobile-menu">MENU</a>
+      <nav role="navigation">
+        <ul id="js-centered-navigation-menu" class="centered-navigation-menu show">
+          <li class="nav-link logo">
+            <a href="javascript:void(0)" class="logo">
+              <img src="hippo_nav.svg" alt="Logo image">
+            </a>
+          </li>
+          <li class="nav-link"><a href="/dashboard">Dashboard</a></li>
+          <li class="nav-link"><a href="/explore">Explore</a></li>
           <% if user_signed_in? %>
             <li class="nav-link">
             <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
@@ -41,40 +39,35 @@
             <%= link_to('Login')  %>  
             </li>
           <% end %>
-      </ul>
-    </nav>
-  </div>
-</header>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
 
 
 <div class="login-wrapper">
-  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-        
-        <div class="field-wrapper">
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>   
+    <div class="field-wrapper">
+      <div class="field">
+        <%= f.email_field :email, autofocus: true, :placeholder => "Email" %> 
+      </div>
 
-            <div class="field">
-            <%= f.email_field :email, autofocus: true, :placeholder => "Email" %> 
-            </div>
+      <div class="field">
+        <%= f.password_field :password, autocomplete: "off", :placeholder => "Password" %>
+      </div>
+    </div>
 
-            <div class="field">
-              <%= f.password_field :password, autocomplete: "off", :placeholder => "Password" %>
-            </div>
-        </div>
+    <% if devise_mapping.rememberable? -%>
+      <div class="fieldextra-wrapper">
+        <%= f.label :remember_me %>
+        <%= f.check_box :remember_me %>
+      </div>
+    <% end -%>
 
-            <% if devise_mapping.rememberable? -%>
-        <div class="fieldextra-wrapper">
-                <%= f.label :remember_me %>
-                  <%= f.check_box :remember_me %>
-
-              </div>
-          <% end -%>
-
-            <div class="actions">
-              <%= f.submit "Log in" %>
-            </div>
-        </div>
-
+    <div class="actions">
+      <%= f.submit "Log in" %>
+    </div>
   <% end %> 
 </div>
 
@@ -94,7 +87,6 @@
     <ul>
       <li><a href="javascript:void(0)">About</a></li>
       <li><a href="javascript:void(0)">Contact</a></li>
-      <li><a href="javascript:void(0)">Products</a></li>
     </ul>
 
     <div class="footer-secondary-links">
@@ -105,13 +97,7 @@
 
       <ul class="footer-social">
         <li><a href="javascript:void(0)">
-          <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/facebook-logo-circle.png" alt="Facebook">
-          </a></li>
-        <li><a href="javascript:void(0)">
           <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/twitter-logo-circle.png" alt="Twitter">
-        </a></li>
-        <li><a href="javascript:void(0)">
-          <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/youtube-logo-circle.png" alt="YouTube">
         </a></li>
       </ul>
     </div>

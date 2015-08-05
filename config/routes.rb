@@ -6,12 +6,10 @@ Rails.application.routes.draw do
   end
 
   resources :products
-  resources :subscriptions
 
-
-  root to: "users#home"
+  root "users#home"
   
-  get 'explore'   => 'subscriptions#index'
+  get 'explore'   => 'products#index'
   get 'dashboard' => 'subscriptions#index'
   
 
