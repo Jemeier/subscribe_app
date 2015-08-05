@@ -8,14 +8,14 @@ fieldset {
 input,
 label,
 select {
-  display: block;
+  display: inline-block;
   font-family: $base-font-family;
   font-size: $base-font-size;
 }
 
 label {
-  font-weight: 600;
-  margin-bottom: $small-spacing / 2;
+  font-weight: 400;
+  margin-bottom: $small-spacing / 1;
 
   &.required::after {
     content: "*";
@@ -40,6 +40,8 @@ textarea {
   padding: $base-spacing / 3;
   transition: border-color;
   width: 100%;
+  padding: 5px;
+  
 
   &:hover {
     border-color: darken($base-border-color, 10%);
@@ -62,8 +64,9 @@ input[type="search"] {
 
 input[type="checkbox"],
 input[type="radio"] {
-  display: inline;
-  margin-right: $small-spacing / 2;
+  display: inline-block;
+  margin-right: $small-spacing / 1;
+  float: left;
 }
 
 input[type="file"] {
@@ -75,4 +78,47 @@ select {
   margin-bottom: $base-spacing;
   max-width: 100%;
   width: auto;
+}
+
+.login-wrapper {
+  padding: 10px;
+  background-color: rgb(231, 241, 236);
+  width: 100%;
+  z-index: 100;
+  margin: 0 auto;
+  input {
+ 
+    }
+}
+
+.field-wrapper {
+  float: left;
+  width: 200px;
+  margin-left: 500px;
+  margin-right: 20px;
+}
+
+.fieldextras-wrapper {
+  display: inline-block;
+  float: left;
+  width: 200px;
+}
+
+.actions input {
+  background-color: white;
+  color: black;
+  font-family:roboto;
+  font-weight:400;
+  text-transform: uppercase;
+  border: 1px solid black;
+  padding: 5px;
+  margin-top:10px; 
+
+    &:hover {
+      background-color:black ;
+    }
+
+    &:focus {
+      background-color: grey;
+    }
 }

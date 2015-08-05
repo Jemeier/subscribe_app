@@ -1,0 +1,16 @@
+Searching 917 files for ".field"
+
+/Users/AndyAgus/Desktop/nycda/rails/week4/final-project-group/subscribe_app/app/assets/stylesheets/scaffolds.scss:
+   33  
+   34  div {
+   35:   &.field, &.actions {
+   36      margin-bottom: 10px;
+   37    }
+   ..
+   42  }
+   43  
+   44: .field_with_errors {
+   45    padding: 2px;
+   46    background-color: red;
+
+2 matches in 1 file
