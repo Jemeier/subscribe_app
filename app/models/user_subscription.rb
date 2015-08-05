@@ -1,6 +1,6 @@
 class UserSubscription < ActiveRecord::Base
 
-  belongs_to :users
-  belongs_to :subscriptions
+  belongs_to :user
+  belongs_to :subscription
   
 end
