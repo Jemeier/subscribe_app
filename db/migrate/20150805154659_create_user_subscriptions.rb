@@ -1,8 +1,8 @@
 class CreateUserSubscriptions < ActiveRecord::Migration
   def change
     create_table :user_subscriptions do |t|
-
-      t.timestamps null: false
+      t.references :subscription
+      t.references :user
     end
   end
 end
