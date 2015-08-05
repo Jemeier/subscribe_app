@@ -1,6 +1,5 @@
 class SubscriptionsController < ApplicationController
   before_action :set_subscription, only: [:show, :edit, :update, :destroy]
-
   # GET /subscriptions
   # GET /subscriptions.json
   def index
@@ -71,4 +70,13 @@ class SubscriptionsController < ApplicationController
     def subscription_params
       params[:subscription]
     end
+
+    # def user_params
+    #   params.require(:subscription).permit(:image)
+    # end
+
+  
+
+# Use strong_parameters for attribute whitelisting
+# Be sure to update your create() and update() controller methods.
 end

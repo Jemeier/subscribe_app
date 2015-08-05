@@ -1,0 +1,7 @@
+development:
+   access_key_id: AKIAIKY744KROQ5GTF3A
+   secret_access_key: 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
+
+production:
+   access_key_id: AKIAIKY744KROQ5GTF3A
+   secret_access_key: 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

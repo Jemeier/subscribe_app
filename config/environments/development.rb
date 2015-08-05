@@ -1,4 +1,15 @@
 Rails.application.configure do
+  
+  #assigning amazon s3 with paperclip
+  config.paperclip_defaults = {
+    :storage => :s3,
+    :s3_credentials => {
+      :bucket => 'subscriptionimagebucket',
+      :access_key_id => 'AKIAIKY744KROQ5GTF3A',
+      :secret_access_key => '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'
+    }
+  }
+
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded on
