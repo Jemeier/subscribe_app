@@ -24,7 +24,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'paperclip'
 gem 'devise'
-gem 'aws-sdk'
+gem 'aws-sdk', '~> 1.61.0'
 gem 'bourbon'
 gem 'sass'
 gem 'neat'
