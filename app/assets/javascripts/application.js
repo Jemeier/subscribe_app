@@ -22,7 +22,12 @@ $( document ).ready(function() {
    $(".login-wrapper").hide();
 
    $( "li:nth-child(5)" ).click(function(){
-       $(".login-wrapper").slideDown(500);
+       $(".login-wrapper").slideDown(300);
    });
+
+   $('a').click(function(){
+       $(".login-wrapper").hide(500);
+   });
+
 
 });
