@@ -1,7 +1,8 @@
 class Subscription < ActiveRecord::Base
 
-  has_many :user_subscriptions
-  has_many :users, through: :user_subscriptions
+  belongs_to  :products
+  has_many    :user_subscriptions
+  has_many    :users, through: :user_subscriptions
 
   
 end
