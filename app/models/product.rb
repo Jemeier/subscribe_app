@@ -4,7 +4,7 @@ class Product < ActiveRecord::Base
   validates_uniqueness_of :name
 
   require 'open-uri'
-  has_attached_file :image, :default_url => "/images/missing.png", :styles => { :medium => "300x300>"}
+  has_attached_file :image, :default_url => "/images/missing.png", :styles => { :medium => "300x300>", :small => "100x100", :large => "500x500"}
   validates_attachment_content_type :image, :content_type => %w(image/jpeg image/jpg image/png)
 
   private
