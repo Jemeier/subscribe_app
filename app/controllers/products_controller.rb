@@ -1,7 +1,10 @@
 class ProductsController < ApplicationController
+  autocomplete :product, :name 
+
 
   def index
-    @products = Product.all
+    @product = Product.all
+    @products = Product.paginate(page: params[:page], per_page: 20)
   end
 
 

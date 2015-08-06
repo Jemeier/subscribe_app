@@ -1,0 +1,71 @@
+.total-wrapper {
+}
+
+
+.dashboard-wrapper {
+  @include outer-container;
+  background-color: white;
+    .page-header {
+      font-size: 1.5em;
+      border-bottom: 1px solid black;
+
+    }
+
+    .title-bar{
+      @include span-columns(12);
+      padding-top: 20px;
+      padding-bottom: 20px;
+
+      font-size: 1em;
+      font-weight: bold;
+        .left-title{
+          @include span-columns(8 of 12)
+        }
+
+        .right-title{
+          @include span-columns(4 of 12)
+        }
+    }
+
+    .sub-wrapper{
+      @include span-columns(8);
+      border-right: 1px solid;
+        
+        .subscription {
+          @include span-columns(8 of 8);
+          margin-bottom: 20px;
+            &:hover {
+              background-color: red;
+            }
+
+              img{
+                  width: 200px;
+                  @include span-columns(2 of 8);
+              }
+
+                  h2 {
+                    font-size: 1.5em;
+                  }
+
+                  .price {
+                    margin-top: -10px;
+                    font-size: 1.2em;
+                    color: black;
+                  }
+
+
+                  span {
+                    color: grey;
+                  }
+            
+
+        }
+    }
+
+    .console {
+      @include span-columns(4);
+    }
+    
+}
+
+  

@@ -30,9 +30,11 @@ products.each do |p|
     p.image_file_name = "photo#{p.image_num}.jpeg"
     p.save
   end
-end
 
 
+# products = Product.all
+
+<<<<<<< HEAD
 # products = Product.all
 
 # products.each do |product|
@@ -48,6 +50,11 @@ end
 
 
 
+
+# products.each do |product|
+#    product.image = File.open("./wp/all_photos/photo#{product.image_num}.jpeg","rb")
+#    product.save
+# end
 
 # uploads initial images through paperclip
 # products = Product.all

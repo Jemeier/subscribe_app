@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<div id="explore_container">
+  
+  <%= form_tag "/products/autocomplete_product_name" do %>
+    <%= autocomplete_field_tag :product_name, '', autocomplete_product_name_products_path %>
+  <% end %>
+  
+
+  <div class="product_wrapper">
+    
+      <% @products.each do |p| %>
+        <div class="product">
+            <h2><%= p.name %></h2>
+            <img src="<%= p.image.url(:medium) %>">
+            <p><%= p.description %></p>
+            <p><%= p.category%></p>
+        </div>
+      <% end %>
+      
+    <%= will_paginate %>
+  </div>
+
+  <div class="sidebar">
+    <p>SideBar</p>
+  </div>
+
+</div> <!-- close product_wrapper -->
