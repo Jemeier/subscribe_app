@@ -6,12 +6,6 @@ unless (User.where(email: 'test@example.com'))
   user.save!
 end
 
-u = User.first
-10.times do |n|
-  sub = Subscription.find(n+1)
-  u.subscriptions << sub
-end
-
 # creates a mock subscription for each of the products currently in the database
 if Subscription.count < 463
   463.times do |n|
@@ -25,15 +19,18 @@ if Subscription.count < 463
   end
 end
 
-products = Product.all
-
-products.each do |product|
-   product.image = File.open("./wp/all_photos/photo#{product.image_num}.jpeg","rb")
-   product.save
+u = User.first
+10.times do |n|
+  sub = Subscription.find(n+1)
+  u.subscriptions << sub
 end
 
+# products = Product.all
 
-
+# products.each do |product|
+#    product.image = File.open("./wp/all_photos/photo#{product.image_num}.jpeg","rb")
+#    product.save
+# end
 
 # uploads initial images through paperclip
 # products = Product.all

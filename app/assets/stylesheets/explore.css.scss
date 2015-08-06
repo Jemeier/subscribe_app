@@ -1,0 +1,19 @@
+
+#explore_container {
+  @include outer-container(12);
+
+  .product_wrapper {
+    @include span-columns(8);
+  }
+
+  .sidebar {
+    @include span-columns(3);
+  }
+  
+}
+
+
+
+.pagination {
+  clear: left;
+}
