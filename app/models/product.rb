@@ -3,6 +3,8 @@ class Product < ActiveRecord::Base
   has_many :subscriptions, dependent: :destroy
   validates_uniqueness_of :name
 
+  accepts_nested_attributes_for :subscriptions
+  
   require 'open-uri'
   has_attached_file :image, :default_url => "/images/missing.png", :styles => { :medium => "300x300>", :small => "100x100", :large => "500x500"}
   validates_attachment_content_type :image, :content_type => %w(image/jpeg image/jpg image/png)

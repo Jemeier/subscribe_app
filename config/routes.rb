@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   
   get 'explore'   => 'products#index'
   get 'dashboard' => 'subscriptions#index'
+  get 'add' => 'subscriptions#new'
   
 
   # The priority is based upon order of creation: first created -> highest priority.

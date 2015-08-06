@@ -17,7 +17,9 @@ class SubscriptionsController < ApplicationController
 
   # GET /subscriptions/new
   def new
+    @product = Product.new
     @subscription = Subscription.new
+
   end
 
   # GET /subscriptions/1/edit

@@ -1,5 +1,22 @@
-<h1>New Subscription</h1>
+<h1>Add Subscriptions</h1>
 
-<%= render 'form' %>
+<%= form_for @product do |f| %>
+  
+  <%= f.text_field :name, placeholder: "Product Name" %><br>
+  <%= f.text_field :category, placeholder: "Category" %><br>
+  <%= f.text_field :description, placeholder: "Product Description" %> <br>
 
-<%= link_to 'Back', subscriptions_path %>
+  <%= f.fields_for :subscription do |subscriptions_form| %>
+    
+    <%= subscriptions_form.number_field :price, placeholder: "Price of Subscription" %>
+
+    <%= subscriptions_form.select(:month_interval, (1..12) ) %>
+  
+  <div class="actions">
+   <%= f.submit "Add Subscription" %>
+  </div>
+
+<% end %>
+
+<% end %>
+
