@@ -1,17 +1,35 @@
-<p id="notice"><%= notice %></p>
+<div class="total-wrapper">
+   <p id="notice"><%= notice %></p>
 
-<h1>Dashboard</h1>
+     
 
+   
+   <div class="dashboard-wrapper">
+      <div class="page-header"> Dashboard</div>
 
+      <div class="title-bar"> 
+         <div class="left-title"> Your Subscriptions </div>
+         <div class="right-title"> Console </div>
+       </div>
 
-  <% @subscriptions.each do |s| %>
-    <div class="subscription">
-      <h2><%= s.product.name %></h2>
-      <img src="<%= s.product.image.url(:medium) %>">
-      <p class="price"><%= s.price %> every <%= s.month_interval %> month(s) </p>
-      <p class="description"><%= s.product.description %></p>
-      <span><%= s.product.category %></span>
+      <div class="sub-wrapper">
+        <% @subscriptions.each do |s| %>
+          <div class="subscription">
+              <div class="sub-details"> 
+                  <img src="<%= s.product.image.url %>">
+                  <h2><%= s.product.name %></h2>
+                  <p class="price"> $ <%= s.price %>0 every <%= s.month_interval %> month(s) </p>
+                 
+                  <span><%= s.product.category %></span>
+              </div>
+         </div>     
+        <% end %>
+      </div>
+
+      <div class="console">
+         <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi facilis illum laudantium. Dolorem, aliquam, fugiat. Ipsa qui, repudiandae, inventore ea sint iste, cupiditate nostrum in, magnam libero enim illo architecto?</p>
+      </div> 
+     
       
-    </div>
-  <% end %>
-      
+   </div>
+</div>
