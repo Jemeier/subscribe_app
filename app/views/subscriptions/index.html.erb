@@ -1,25 +1,17 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Subscriptions</h1>
+<h1>Dashboard</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @subscriptions.each do |subscription| %>
-      <tr>
-        <td><%= link_to 'Show', subscription %></td>
-        <td><%= link_to 'Edit', edit_subscription_path(subscription) %></td>
-        <td><%= link_to 'Destroy', subscription, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
-<br>
-
-<%= link_to 'New Subscription', new_subscription_path %>
+  <% @subscriptions.each do |s| %>
+    <div class="subscription">
+      <h2><%= s.product.name %></h2>
+      <img src="<%= s.product.image.url(:medium) %>">
+      <p class="price"><%= s.price %> every <%= s.month_interval %> month(s) </p>
+      <p class="description"><%= s.product.description %></p>
+      <span><%= s.product.category %></span>
+      
+    </div>
+  <% end %>
+      

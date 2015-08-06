@@ -1,0 +1,16 @@
+
+
+.subscription {
+  @include outer-container;
+  padding: 10px;
+  border-bottom: 1px solid gray;
+
+  img {
+    @include span-columns(3);
+    // padding: 10px 20px 10px 0px;
+  }
+  
+  .description {
+    @include span-columns(8);
+  }
+}
