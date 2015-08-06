@@ -2,9 +2,13 @@
 
 <div id="explore_container">
   
+  <%= form_tag "/products/autocomplete_product_name" do %>
+    <%= autocomplete_field_tag :product_name, '', autocomplete_product_name_products_path %>
+  <% end %>
+  
+
   <div class="product_wrapper">
     
-
       <% @products.each do |p| %>
         <div class="product">
             <h2><%= p.name %></h2>
@@ -21,4 +25,4 @@
     <p>SideBar</p>
   </div>
 
-</div>
+</div> <!-- close product_wrapper -->

@@ -5,7 +5,9 @@ Rails.application.routes.draw do
     resources :subscriptions
   end
 
-  resources :products
+  resources :products do
+    get :autocomplete_product_name, :on => :collection
+  end
 
   root "users#home"
   

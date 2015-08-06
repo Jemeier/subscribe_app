@@ -1,9 +1,15 @@
+
+
 @import "bourbon";
 @import "base/base";
 @import "neat/neat";
 @import "user";
 @import "dashboard";
 @import "explore";
+
+/*
+ *= require jquery-ui/autocomplete
+ */
 
 .centered-navigation {
   $base-border-radius: 3px !default;
