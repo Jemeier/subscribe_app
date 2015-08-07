@@ -3,3 +3,10 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 
+$(document).ready(function()
+  {
+      $('.currency').blur(function()
+      {
+          $('.currency').formatCurrency();
+      });
+  });
