@@ -2,10 +2,22 @@
 
 <div id="explore_container">
   
-  <div id="auto_field">
-    <%= form_tag "/products/autocomplete_product_name" do %>
+  <div id="autocomplete">
+    <!-- <span>Search:</span> -->
+    <%= form_tag("/products/autocomplete_product_name", method: :get) do %>
       <%= autocomplete_field_tag :product_name, '', autocomplete_product_name_products_path %>
     <% end %>
+  </div>
+  
+  <div class="category_wrapper">
+    <ul>
+      <li> <%= link_to "Art & Culture", products_path({category: "Art & Culture"}) %> </li>
+      <li> <%= link_to "Family & Kids", products_path({category: "Family & Kids"}) %> </li>
+      <li> <%= link_to "Food & Artisan Edibles", products_path({category: "Food & Artisan Edibles"}) %> </li>
+      <li> <%= link_to "Fitness & Health", products_path({category: "Fitness & Health"}) %> </li>
+      <li> <%= link_to "Just for Women", products_path({category: "Just for Women"}) %> </li>
+      <li> <%= link_to "Nerd & Novelty", products_path({category: "Nerd & Novelty"}) %> </li>
+    </ul>
   </div>
 
   <div class="product_wrapper">
