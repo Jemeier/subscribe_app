@@ -19,12 +19,21 @@
 
 $( document ).ready(function() {
    
-   //navbar dropdown
+  //navbar dropdown
 
-   $(".login-wrapper").hide();
+  $(".login-wrapper").hide();
 
-   $( "li:nth-child(5)" ).click(function(){
-       $(".login-wrapper").slideDown(500);
-   });
+  $( "li:nth-child(5)" ).click(function(){
+     $(".login-wrapper").slideDown(500);
+  });
+
+
+  $('#product_name').bind('railsAutocomplete.select', function(event, data){
+    window.location = "/products?id=" + data.item.id;
+  });
+
+  $('#product_name').submit(function(e) {
+    e.preventDefault()
+  });
 
 });
