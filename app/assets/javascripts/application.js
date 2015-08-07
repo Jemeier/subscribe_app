@@ -17,14 +17,21 @@
 //= require turbolinks
 //= require_tree .
 
-$( document ).ready(function() {
    
-   //navbar dropdown
+   //navbar 
+   $(document).ready(function() {
+  var menuToggle = $('#js-mobile-menu').unbind();
+  $('#js-navigation-menu').removeClass("show");
 
-   $(".login-wrapper").hide();
-
-   $( "li:nth-child(5)" ).click(function(){
-       $(".login-wrapper").slideDown(500);
-   });
-
+  menuToggle.on('click', function(e) {
+    e.preventDefault();
+    $('#js-navigation-menu').slideToggle(function(){
+      if($('#js-navigation-menu').is(':hidden')) {
+        $('#js-navigation-menu').removeAttr('style');
+      }
+    });
+  });
 });
+
+
+

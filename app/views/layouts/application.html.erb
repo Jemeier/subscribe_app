@@ -28,48 +28,27 @@
     <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">MENU</a>
     <nav role="navigation">
       <ul id="js-navigation-menu" class="navigation-menu show">
-        <li class="nav-link"><a href="javascript:void(0)">Products</a></li>
-        <li class="nav-link"><a href="javascript:void(0)">About Us</a></li>
+        <li class="nav-link"><a href="/dashboard">Dashboard</a></li>
+        <li class="nav-link"><a href="/explore">Explore</a></li>
         <li class="nav-link"><a href="javascript:void(0)">Contact</a></li>
-        <li class="nav-link more"><a href="javascript:void(0)">More</a>
-          <ul class="submenu">
-            <li><a href="javascript:void(0)">Submenu Item</a></li>
-            <li><a href="javascript:void(0)">Another Item</a></li>
-            <li class="more"><a href="javascript:void(0)">Item with submenu</a>
-              <ul class="submenu">
-                <li><a href="javascript:void(0)">Sub-submenu Item</a></li>
-                <li><a href="javascript:void(0)">Another Item</a></li>
-              </ul>
-            </li>
-            <li class="more"><a href="javascript:void(0)">Another submenu</a>
-              <ul class="submenu">
-                <li><a href="javascript:void(0)">Sub-submenu</a></li>
-                <li><a href="javascript:void(0)">An Item</a></li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-      </ul>
+        <li class="nav-link"><a href="javascript:void(0)">Log In</a></li>
     </nav>
     <div class="navigation-tools">
       <div class="search-bar">
-        <form role="search">
-          <input type="search" placeholder="Enter Search" />
-          <button type="submit">
-            <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/search-icon.png" alt="Search Icon">
-          </button>
-        </form>
+        <%= form_tag "/products/autocomplete_product_name", id: "autocomplete" do %>
+        <%= autocomplete_field_tag :product_name, '', autocomplete_product_name_products_path %>
+        <% end %>
       </div>
     </div>
   </div>
 </header>
 
+<!-- Log in form --> 
+    <div class="login-form-wrapper">
+
+    </div>
+
 <%= yield %>
-
-
-<!--<div class="wrapper-for-content-outside-of-footer">
-   Uncomment this whole section for a sticky footer. The content of the page should be inside of this .wrapper-for-content-outside-of-footer
-</div>-->
 
 <div class="spacer"> </div>
 <footer class="footer-2" role="contentinfo">

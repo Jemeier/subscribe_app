@@ -21,6 +21,8 @@
                   <p class="price"> $ <%= s.price %>0 every <%= s.month_interval %> month(s) </p>
                  
                   <span><%= s.product.category %></span>
+
+
               </div>
          </div>     
         <% end %>
@@ -28,6 +30,12 @@
 
       <div class="console">
          <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi facilis illum laudantium. Dolorem, aliquam, fugiat. Ipsa qui, repudiandae, inventore ea sint iste, cupiditate nostrum in, magnam libero enim illo architecto?</p>
+        
+        <div class="pie-chart">
+          <%= pie_chart User.last.subscriptions.joins(:product).group("products.format").count
+%>
+        </div>
+
       </div> 
 
      
