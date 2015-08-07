@@ -1,19 +1,23 @@
-
-#explore_container {
-  @include outer-container(12);
-
-  .product_wrapper {
-    @include span-columns(8);
-  }
-
-  .sidebar {
-    @include span-columns(3);
-  }
   
-}
 
+.product_wrapper {
+  @include outer-container;
+  
+  .column {
+    @include span-columns(4);
+    border: 1px solid blue;
+  }
 
+  .product {
+    text-align: center;
+    height: 400px;
+    h2 {
+      padding-top: 10px;
+    }
+    .description {
+      width: 280px;
+      margin: 0 auto;
+    }
+  }
 
-.pagination {
-  clear: left;
 }
