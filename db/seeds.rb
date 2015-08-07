@@ -34,7 +34,6 @@ products.each do |p|
 
 # products = Product.all
 
-<<<<<<< HEAD
 # products = Product.all
 
 # products.each do |product|
