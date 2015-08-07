@@ -13,7 +13,7 @@
     <div class="price-field-wrapper">
       <%= f.fields_for :subscription do |subscriptions_form| %>
         
-        <%= subscriptions_form.number_field :price, :required => true,  placeholder: "$10.89 (*)" %>
+        <%= subscriptions_form.number_field :price, :required => true,  placeholder: "$10*" %>
       <h5 id="every"> every </h>
         <%= subscriptions_form.select(:month_interval, (0..12) ) %>
       <h5 id="month">months</h>
