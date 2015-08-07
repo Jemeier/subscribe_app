@@ -18,6 +18,7 @@
 //= require_tree .
 
    
+<<<<<<< HEAD
    //navbar 
    $(document).ready(function() {
   var menuToggle = $('#js-mobile-menu').unbind();
@@ -31,7 +32,12 @@
       }
     });
   });
+
+  $('#product_name').bind('railsAutocomplete.select', function(event, data){
+    window.location = "/products?id=" + data.item.id;
+  });
+
+  $('#product_name').submit(function(e) {
+    e.preventDefault()
+  });
 });
-
-
-

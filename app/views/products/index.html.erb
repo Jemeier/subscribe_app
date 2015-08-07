@@ -1,14 +1,16 @@
 <p id="notice"><%= notice %></p>
 
-<div id="explore_container">
+
   
-  <div id="autocomplete">
+  <div id="autocomplete_wrapper">
     <!-- <span>Search:</span> -->
-    <%= form_tag("/products/autocomplete_product_name", method: :get) do %>
+    <%= form_tag "/products", method: :get, id: "autocomplete" do %>
       <%= autocomplete_field_tag :product_name, '', autocomplete_product_name_products_path %>
     <% end %>
   </div>
-  
+
+<div id="explore_container">
+
   <div class="category_wrapper">
     <ul>
       <li> <%= link_to "Art & Culture", products_path({category: "Art & Culture"}) %> </li>
@@ -17,6 +19,7 @@
       <li> <%= link_to "Fitness & Health", products_path({category: "Fitness & Health"}) %> </li>
       <li> <%= link_to "Just for Women", products_path({category: "Just for Women"}) %> </li>
       <li> <%= link_to "Nerd & Novelty", products_path({category: "Nerd & Novelty"}) %> </li>
+      <li> <%= link_to "All", products_path({category: nil}) %> </li>
     </ul>
   </div>
 
@@ -26,7 +29,11 @@
         <div class="column">  
           <% col.each do |p| %>
             <div class="product">
-                <h2><%= p.name %></h2> <p><%= p.category%></p>
+                <div class="heading">
+                  <h2><%= p.name %></h2>
+                  <p><%= p.category%></p>
+                  <button>+</button>
+                </div>
                 <div class="img"><img src="<%= p.image.url(:medium) %>"></div>
                 <p class="description"><%= p.description %></p>
             </div>
