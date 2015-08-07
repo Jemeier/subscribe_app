@@ -2,27 +2,29 @@
 
 <div id="explore_container">
   
-  <%= form_tag "/products/autocomplete_product_name" do %>
-    <%= autocomplete_field_tag :product_name, '', autocomplete_product_name_products_path %>
-  <% end %>
-  
+  <div id="auto_field">
+    <%= form_tag "/products/autocomplete_product_name" do %>
+      <%= autocomplete_field_tag :product_name, '', autocomplete_product_name_products_path %>
+    <% end %>
+  </div>
 
   <div class="product_wrapper">
     
-      <% @products.each do |p| %>
-        <div class="product">
-            <h2><%= p.name %></h2>
-            <img src="<%= p.image.url(:medium) %>">
-            <p><%= p.description %></p>
-            <p><%= p.category%></p>
+      <% @products.each_slice(10) do |col| %>
+        <div class="column">  
+          <% col.each do |p| %>
+            <div class="product">
+                <h2><%= p.name %></h2> <p><%= p.category%></p>
+                <div class="img"><img src="<%= p.image.url(:medium) %>"></div>
+                <p class="description"><%= p.description %></p>
+            </div>
+          <% end %>
         </div>
       <% end %>
       
-    <%= will_paginate %>
+    
   </div>
-
-  <div class="sidebar">
-    <p>SideBar</p>
-  </div>
+  
+  <%= will_paginate %>
 
 </div> <!-- close product_wrapper -->
