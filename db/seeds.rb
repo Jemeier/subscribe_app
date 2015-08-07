@@ -32,3 +32,33 @@ products.each do |p|
   end
 end
 
+
+-# products = Product.all   
+-   
+-# products = Product.all   
+-   
+-# products.each do |product|   
+-#    begin   
+-#      File.open("./wp/all_photos/photo#{product.image_num}.jpeg","rb") do |f|   
+-#       product.image = f    
+-#      end   
+-#      product.save    
+-#    rescue    
+-#      puts "Failure on product #{product.image_num}"    
+-#    end   
+-# end    
+-   
+-   
+-   
+-   
+-# products.each do |product|   
+-#    product.image = File.open("./wp/all_photos/photo#{product.image_num}.jpeg","rb")    
+-#    product.save    
+-# end    
+-   
+-# uploads initial images through paperclip   
+-# products = Product.all   
+-# products.each do |product|   
+-#    product.image = File.open("./wp/all_photos/photo#{product.image_num}.jpeg","rb")    
+-#    product.save    
+-# end
