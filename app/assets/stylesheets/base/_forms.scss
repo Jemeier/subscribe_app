@@ -80,55 +80,19 @@ select {
   width: auto;
 }
 
-.login-wrapper {
-  padding: 10px;
-  background-color: rgb(231, 241, 236);
-  width: 100%;
-  z-index: 100;
-  margin: 0 auto;
-  label {
-    color: green;
-  }
-  input {
- 
-    }
+
+
+td {
+
 }
-.thing {
-  color: green;
-}
-.field-wrapper {
-  float: left;
-  width: 200px;
-  margin-left: 500px;
+
+.fieldset {
   margin-right: 20px;
 }
 
-.fieldextras-wrapper {
-  display: inline-block;
-  float: left;
-  width: 200px;
+table tr td {
+  border-bottom: 0px;
+
 }
 
-.actions input {
-  background-color: white;
-  color: black;
-  font-family:roboto;
-  font-weight:400;
-  text-transform: uppercase;
-  border: 1px solid black;
-  padding: 5px;
-  margin-top:10px; 
-
-    &:hover {
-      background-color:black ;
-    }
-
-    &:focus {
-      background-color: grey;
-    }
-}
-
-#signup-wrapper .field {
-  width: 50%;
-  background-color: red;
-}
+.login-formwrapper
