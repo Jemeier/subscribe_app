@@ -3,8 +3,16 @@ class ProductsController < ApplicationController
 
 
   def index
-    @product = Product.all
-    @products = Product.paginate(page: params[:page], per_page: 30)
+    if params[:category]
+      @products = Product.where(category: params[:category]).paginate(page: params[:page], per_page: 30)
+    else
+      @products = Product.paginate(page: params[:page], per_page: 30)
+    end
+  end
+
+  def autocomplete_product_name
+    render 'new'
+    # redirect_to products_url
   end
 
 
