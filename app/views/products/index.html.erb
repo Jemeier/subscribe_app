@@ -32,7 +32,8 @@
                 <div class="heading">
                   <h2><%= p.name %></h2>
                   <p><%= p.category%></p>
-                  <button>+</button>
+                  <!-- <button>+</button> -->
+                  <%= button_to "+", {}, {class: "add_button", } %>
                 </div>
                 <div class="img"><img src="<%= p.image.url(:medium) %>"></div>
                 <p class="description"><%= p.description %></p>
