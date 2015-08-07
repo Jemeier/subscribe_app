@@ -5,8 +5,8 @@ header.navigation {
   $dark-gray: #333 !default;
   $large-screen: em(860) !default;
   $navigation-padding: 1em;
-  $navigation-background: $dark-gray;
-  $navigation-color: transparentize(white, 0.3);
+  $navigation-background:white;
+  $navigation-color: transparentize(#00a9ff, 0.3);
   $navigation-color-hover: white;
   $navigation-height: 60px;
   $navigation-nav-button-background: $action-color;
@@ -536,4 +536,9 @@ border:0;
     position: absolute;
     top: 20px;
     right: -70px;
+}
+
+.svg {
+  width: 100px;
+  fill: white;
 }
