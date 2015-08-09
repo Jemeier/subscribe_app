@@ -12,6 +12,16 @@
 //
 
 
+ // about supported directives.    // about supported directives.
+ //    //
+//= require jquery   +
+//= require jquery_ujs   +
+//= require jquery-ui/autocomplete   +
+//= require autocomplete-rails   +
+//= require turbolinks   +
+//= require_tree .   +
+     
+    
 
 
 
@@ -54,4 +64,11 @@ $(document).ready(function() {
     }
   });
 });
+  $('#product_name').bind('railsAutocomplete.select', function(event, data){
+    window.location = "/products?id=" + data.item.id;
+  });
+
+  $('#product_name').submit(function(e) {
+    e.preventDefault()
+  });
 });
