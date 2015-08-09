@@ -54,3 +54,11 @@
 </script>
 
 
+  $('#product_name').bind('railsAutocomplete.select', function(event, data){
+    window.location = "/products?id=" + data.item.id;
+  });
+
+  $('#product_name').submit(function(e) {
+    e.preventDefault()
+  });
+});
