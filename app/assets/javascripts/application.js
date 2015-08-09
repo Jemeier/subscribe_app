@@ -10,16 +10,26 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
-//= require jquery_ujs
-//= require jquery-ui/autocomplete
-//= require autocomplete-rails
-//= require turbolinks
-//= require_tree .
+
+
+ // about supported directives.    // about supported directives.
+ //    //
+//= require jquery   +
+//= require jquery_ujs   +
+//= require jquery-ui/autocomplete   +
+//= require autocomplete-rails   +
+//= require turbolinks   +
+//= require_tree .   +
+     
+    
+
+
+
+
 
    
    //navbar 
-   $(document).ready(function() {
+$(document).ready(function() {
   var menuToggle = $('#js-mobile-menu').unbind();
   $('#js-navigation-menu').removeClass("show");
 
@@ -30,30 +40,30 @@
         $('#js-navigation-menu').removeAttr('style');
       }
     });
+
+
+ var element = document.getElementById("js-fadeInElement");
+  $(element).addClass('js-fade-element-hide');
+
+  $(window).scroll(function() {
+    if( $("#js-fadeInElement").length > 0 ) {
+      var elementTopToPageTop = $(element).offset().top;
+      var windowTopToPageTop = $(window).scrollTop();
+      var windowInnerHeight = window.innerHeight;
+      var elementTopToWindowTop = elementTopToPageTop - windowTopToPageTop;
+      var elementTopToWindowBottom = windowInnerHeight - elementTopToWindowTop;
+      var distanceFromBottomToAppear = 300;
+
+      if(elementTopToWindowBottom > distanceFromBottomToAppear) {
+        $(element).addClass('js-fade-element-show');
+      }
+      else if(elementTopToWindowBottom < 0) {
+        $(element).removeClass('js-fade-element-show');
+        $(element).addClass('js-fade-element-hide');
+      }
+    }
   });
-
-        $(document).ready(function() {
-
-            $(".signin").click(function(e) {
-                e.preventDefault();
-                $("fieldset#signin_menu").toggle();
-                $(".signin").toggleClass("menu-open");
-            });
-
-            $("fieldset#signin_menu").mouseup(function() {
-                return false
-            });
-            $(document).mouseup(function(e) {
-                if($(e.target).parent("a.signin").length==0) {
-                    $(".signin").removeClass("menu-open");
-                    $("fieldset#signin_menu").hide();
-                }
-            });
-
-        });
-</script>
-
-
+});
   $('#product_name').bind('railsAutocomplete.select', function(event, data){
     window.location = "/products?id=" + data.item.id;
   });
