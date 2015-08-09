@@ -36,14 +36,16 @@
           </h1>
         <div class="break-num"> 
           <p> This Month </p>
-            <p> $152.96 </p>
+            <p> $ <%= current_user.subscriptions.sum(:price)
+%>  </p>
         </div>
         <div class="break-num">
           <p> Year to date </p>
-            <p> $152.96 </p>
+            <p> $ <%= current_user.subscriptions.sum(:price)
+%> </p>
         </div>    
         <div class="pie-chart">
-          <%= pie_chart User.last.subscriptions.joins(:product).group("products.category").count
+          <%= pie_chart current_user.subscriptions.joins(:product).group("products.category").count
 %>        </div>  
 
         </div>

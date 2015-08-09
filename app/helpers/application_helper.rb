@@ -11,5 +11,9 @@ module ApplicationHelper
       @devise_mapping ||= Devise.mappings[:user]
     end
 
+    def monthly_spend
+      current_user.subscriptions.price
+   end
+
   
 end
