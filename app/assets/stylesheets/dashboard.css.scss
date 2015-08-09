@@ -1,61 +1,80 @@
 .total-wrapper {
+  margin: 0px;
 }
 
 
 .dashboard-wrapper {
   @include outer-container;
   background-color: white;
+    span{
+      font-size: .4em;
+    }
     .page-header {
-      font-size: 1.5em;
-      border-bottom: 1px solid black;
-
+      font-size: 3em;
+      color: $light-blue;
+      font-weight: lighter;
     }
 
     .title-bar{
       @include span-columns(12);
+      margin-top: 10px;
       padding-top: 20px;
       padding-bottom: 20px;
-
       font-size: 1em;
-      font-weight: bold;
+      color: $light-blue;
+      font-weight: lighter;
         .left-title{
-          @include span-columns(8 of 12)
+          @include span-columns(6 of 12)
         }
 
         .right-title{
-          @include span-columns(4 of 12)
+          @include span-columns(6 of 12)
         }
     }
 
     .sub-wrapper{
-      @include span-columns(8);
-      border-right: 1px solid;
+      @include span-columns(6);
+      background-color: white;
+      color: $dark-blue;
+      border-right: 10px solid $light-gray;
+      height: 450px;
+      overflow: scroll;
         
         .subscription {
-          @include span-columns(8 of 8);
-          margin-bottom: 20px;
-            &:hover {
-              background-color: red;
-            }
+          @include span-columns(6 of 6);
+          padding: 25px 25px 25px 10px;
+          width: 90%;
+          margin: 0 auto;
+          background-color: $light-gray;
+          border-radius: 10px;
+                margin-bottom: 10px;
 
+            &:hover {
+            }
+                
+              .edit_image {
+                float: right;
+                width: 20px;
+              }
               img{
-                  width: 200px;
-                  @include span-columns(2 of 8);
+                  width: 50px;
+                  @include span-columns(2 of 6);
               }
 
-                  h2 {
-                    font-size: 1.5em;
+                  h3 {
+                    font-size: 1em;
+                    color: $dark-blue;
+                    word-spacing: 1.5px;
                   }
 
                   .price {
                     margin-top: -10px;
-                    font-size: 1.2em;
-                    color: black;
+                    font-size: .8em;
+                    color: lighten($dark-blue, .1);
                   }
 
 
                   span {
-                    color: grey;
                   }
             
 
@@ -63,7 +82,22 @@
     }
 
     .console {
-      @include span-columns(4);
+      @include span-columns(6);
+      .spending-breakdown {
+        @include span-columns(6 of 6);
+        text-align: center;
+        .break-num{
+          float: left;
+          margin-right: 20px;
+          padding-left: 100px;
+        }
+        .pie-chart{
+          @include span-columns(6 of 6);
+          z-index: -1000px;
+        }
+
+
+      }
     }
     
 }

@@ -5,9 +5,9 @@ header.navigation {
   $dark-gray: #333 !default;
   $large-screen: em(860) !default;
   $navigation-padding: 1em;
-  $navigation-background:white;
-  $navigation-color: transparentize(#00a9ff, 0.3);
-  $navigation-color-hover: white;
+  $navigation-background:$light-gray;
+  $navigation-color: $dark-gray;
+  $navigation-color-hover: $light-blue;
   $navigation-height: 60px;
   $navigation-nav-button-background: $action-color;
   $navigation-nav-button-background-hover: lighten($navigation-background, 10%);
@@ -20,7 +20,6 @@ header.navigation {
   $horizontal-bar-mode: $large-screen;
 
   background-color: $navigation-background;
-  border-bottom: 1px solid darken($navigation-background, 10);
   min-height: $navigation-height;
   width: 100%;
   z-index: 999;
@@ -271,7 +270,7 @@ header.navigation {
 
 #content {
     width:520px;
-    min-height:500px;
+    min-height:300px;
 }
 a:link, a:visited {
     color:#27b;
@@ -368,29 +367,31 @@ a.signin.menu-open span {
         margin-top: 5px;
         padding: 10px;
         float: left;
+        background-color: transparent;
     }
 }
      
      .submitbutton {
          float: left;
          width: 20%;
-         margin-top: -7px;
-         margin-left: 12px;
+         margin-top: -15px;
+         margin-left: 0px;
          -webkit-border-radius: 0px 0px 10px 10px;
          -moz-border-radius: 0px 0px 10px 10px;
          border-radius: 0px 0px 10px 10px;
-         background-color:lightblue;
-         color: $base-font-color;
-         font-weight: medium;
+         background-color:transparent;
+         opacity: .7;
+         
+         color: $light-blue;
         }
 
      .submitbutton-signup {
-         margin-top: -7px;
           float: left;
           margin-right: 10px;
+          margin-top: -15px;
           background-color: transparent;
-          color: $base-font-color;
-          font-weight: medium;
+          color: $dark-gray;
+          opacity: .4;
         }
 
   
@@ -536,9 +537,4 @@ border:0;
     position: absolute;
     top: 20px;
     right: -70px;
-}
-
-.svg {
-  width: 100px;
-  fill: white;
 }

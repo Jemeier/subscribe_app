@@ -1,11 +1,13 @@
 <div class="total-wrapper">
+  
    <p id="notice"><%= notice %></p>
 
      
 
    
    <div class="dashboard-wrapper">
-      <div class="page-header"> Dashboard</div>
+      <div class="page-header"> Dashboard <br> 
+       </div>
 
       <div class="title-bar"> 
          <div class="left-title"> Your Subscriptions </div>
@@ -17,24 +19,35 @@
           <div class="subscription">
               <div class="sub-details"> 
                   <img src="<%= s.product.image.url %>">
-                  <h2><%= s.product.name %></h2>
+                  <h3><%= s.product.name %></h3>
                   <p class="price"> $ <%= s.price %>0 every <%= s.month_interval %> month(s) </p>
-                 
                   <span><%= s.product.category %></span>
 
-
+                  <img class="edit_image" src="edit.svg">
               </div>
          </div>     
         <% end %>
       </div>
 
       <div class="console">
-         <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi facilis illum laudantium. Dolorem, aliquam, fugiat. Ipsa qui, repudiandae, inventore ea sint iste, cupiditate nostrum in, magnam libero enim illo architecto?</p>
-        
-        <div class="pie-chart">
-          <%= pie_chart User.last.subscriptions.joins(:product).group("products.format").count
-%>
+                
+      <div class="spending-breakdown">
+          <h1> Spending Breakdown 
+          </h1>
+        <div class="break-num"> 
+          <p> This Month </p>
+            <p> $152.96 </p>
         </div>
+        <div class="break-num">
+          <p> Year to date </p>
+            <p> $152.96 </p>
+        </div>    
+        <div class="pie-chart">
+          <%= pie_chart User.last.subscriptions.joins(:product).group("products.category").count
+%>        </div>  
+
+        </div>
+      </div>
 
       </div> 
 

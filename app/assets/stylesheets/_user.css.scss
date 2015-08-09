@@ -5,6 +5,7 @@
 
 .hero {  
   @include span-columns(12);
+  margin-top: 50px;
   $base-border-radius: 3px !default;
   $action-color: #477DCA !default;
   $large-screen: em(860) !default;
@@ -30,23 +31,28 @@
       h1 {
         font-size: 1.6em;
         margin-bottom: 0.5em;
-        color: black;
+        color: $light-blue;
 
         @include media($large-screen) {
           font-size: 1.8em;
         }
       }
 
+      h2 {
+        font-size: 1.6em;
+        margin-bottom: 0.5em;
+        color: $dark-gray;
+        }
       p {
         font-family: $serif;
         font-weight: 200;
         line-height: 1.4em;
         margin: 0 auto 3em auto; 
-        color: black;
+        color: $base-font-color;
 
         @include media($large-screen) {
           font-size: 1.1em;
-          max-width: 40%;
+          max-width: 60%;
         }
       }
     }
@@ -56,6 +62,7 @@
 
 .device-background {
   @include span-columns(12);
+  margin-top: 100px;
   $base-border-radius: 3px !default;
   $action-color: #477DCA !default;
   $large-screen: em(860) !default;
@@ -102,12 +109,15 @@
 
 
 .md-macbook-pro {
- @include span-columns(5 of 12);
   width: 55.3125em;
   height: 31.875em;
-  font-size: .3em;
+  font-size: .7em;
   z-index: 99999;
+  position: absolute;
+  top: 500px;
+  right: 80px;
   max-height: 40em;
+  margin-top: 100px;
 }
 .md-macbook-pro .md-lid {
   width: 45em;
@@ -198,7 +208,7 @@
 }
 
 .bottom-info{
-  margin-top: 50px;
+  margin-top: 150px;
   @include span-columns(12);
 .fade-in-element {
   @include span-columns(4);
@@ -297,4 +307,8 @@
   }
 }
 
-
+.getstarted {
+  text-align: center;
+  font-size: 2em;
+  margin-top: 50px;
+}
