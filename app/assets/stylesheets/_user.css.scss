@@ -1,5 +1,10 @@
+.home-wrapper {
+  @include outer-container;
+
+}
 
 .hero {  
+  @include span-columns(12);
   $base-border-radius: 3px !default;
   $action-color: #477DCA !default;
   $large-screen: em(860) !default;
@@ -8,17 +13,8 @@
   $hero-color: white;
   $gradient-angle: 10deg;
   $hero-image: 'https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png';
+  ;
 
-  background-color: #white;
-  background-position: top;
-  background-repeat: no-repeat;
-  background-size: cover;
-  padding-bottom: 3em;
-
-  .hero-logo img {
-    height: 4em;
-    margin-bottom: 1em;
-  }
 
   .hero-inner {
     @include outer-container;
@@ -42,6 +38,7 @@
       }
 
       p {
+        font-family: $serif;
         font-weight: 200;
         line-height: 1.4em;
         margin: 0 auto 3em auto; 
@@ -58,6 +55,7 @@
 
 
 .device-background {
+  @include span-columns(12);
   $base-border-radius: 3px !default;
   $action-color: #477DCA !default;
   $large-screen: em(860) !default;
@@ -75,19 +73,15 @@
 //raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png';
   $device-screen-image: 'https:
 //raw.githubusercontent.com/thoughtbot/refills/master/source/images/cosmin_capitanu_screen.jpg';
-
-  @include background(url($device-image), linear-gradient($gradient-angle, $device-background-bottom, $device-background-top), no-repeat $device-background-top scroll);
-  background-repeat: no-repeat;
-  background-size: cover;
-  min-height: 20em;
-  width: 100%;
+  background-color: #00a9ff;
 
   .device-text {
+    @include span-columns(7 of 12);
     color: $device-text-color;
     padding: 2em;
 
+
     @include media($large-screen) {
-      float: left;
       max-width: 50%;
       padding: 4em;
     }
@@ -108,12 +102,12 @@
 
 
 .md-macbook-pro {
+ @include span-columns(5 of 12);
   width: 55.3125em;
   height: 31.875em;
-  font-size: .8em;
-  position: absolute;
-  top: 450px;
-  left: 600px;
+  font-size: .3em;
+  z-index: 99999;
+  max-height: 40em;
 }
 .md-macbook-pro .md-lid {
   width: 45em;
@@ -202,3 +196,105 @@
 .spacer{
   height: 50px;
 }
+
+.bottom-info{
+  margin-top: 50px;
+  @include span-columns(12);
+.fade-in-element {
+  @include span-columns(4);
+  $base-border-color: gainsboro !default;
+  $base-border-radius: 1px !default;
+  $base-background-color: white !default;
+  $base-line-height: 1.5em !default;
+  $base-spacing: 1.5em !default;
+  $dark-gray: #333 !default;
+  $base-font-color: $dark-gray !default;
+  
+  @include clearfix;
+  background: $base-background-color;
+  border-radius: $base-border-radius;
+  border: 1px solid silver;
+  line-height: $base-line-height;
+  margin-bottom: 4em;
+  padding: $base-spacing;
+  text-align: center;
+  margin-right: 20px;
+
+  p {
+    color: $base-font-color;
+    line-height: $base-line-height;
+  }
+  }
+}
+.clear {
+  clear: both;
+}
+
+.bullets {
+  $base-line-height: 1.5em !default;
+  $action-color: #477DCA !default;
+  $dark-gray: #333 !default;
+  $base-font-color: $dark-gray !default;
+  $icon-bullet-size: 3.5em;
+
+  @include display(flex);
+  @include flex-wrap(wrap);
+  margin-bottom: $base-line-height;
+  margin: 1em;
+  overflow: auto;
+  padding: 0;
+
+  .bullet {
+    @include flex-basis(20em);
+    @include flex-grow(1);
+  }
+
+  .bullet-icon {
+    background: $action-color;
+    border-radius: 50%;
+    float: left;
+    height: $icon-bullet-size;
+    padding: $icon-bullet-size / 4;
+    width: $icon-bullet-size;
+  }
+
+  .bullet-icon-1 {
+    background: $action-color;
+  }
+
+  .bullet-icon-2 {
+    background: adjust-hue($action-color, -50%);
+  }
+
+  .bullet-icon-3 {
+    background: adjust-hue($action-color, -140%);
+  }
+
+  .bullet-content {
+    margin-left: $icon-bullet-size * 1.4;
+    margin-bottom: 2em;
+  }
+
+  h2 {
+    border-bottom: 1px solid transparentize($base-font-color, 0.8);
+    display: inline-block;
+    font-size: $icon-bullet-size / 2.5;
+    margin: 0 0 ($icon-bullet-size / 6) 0;
+    padding-top: $icon-bullet-size / 7;
+  }
+
+  li {
+    list-style: none;
+  }
+
+  p {
+    color: $base-font-color;
+    line-height: $base-line-height;
+  }
+
+  img {
+    max-width: 100%;
+  }
+}
+
+
