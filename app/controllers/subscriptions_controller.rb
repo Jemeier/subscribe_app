@@ -17,7 +17,9 @@ class SubscriptionsController < ApplicationController
 
   # GET /subscriptions/new
   def new
+    @product = Product.new
     @subscription = Subscription.new
+
   end
 
   # GET /subscriptions/1/edit
@@ -28,6 +30,7 @@ class SubscriptionsController < ApplicationController
   # POST /subscriptions.json
   def create
     @subscription = Subscription.new(subscription_params)
+    @product = Product.new(product_params)
 
     respond_to do |format|
       if @subscription.save

@@ -11,8 +11,8 @@
 </head>
 <body>
 
-
-<header class="navigation" role="banner">
+  <!-- Navbar --> 
+    <header class="navigation" role="banner">
   <div class="navigation-wrapper">
     <a href="/" class="logo">
       <img src="hippo_nav.svg"  style="height:100px;" 
@@ -23,6 +23,7 @@
       <ul id="js-navigation-menu" class="navigation-menu show">
         <li class="nav-link"><a href="/dashboard">Dashboard</a></li>
         <li class="nav-link"><a href="/explore">Explore</a></li>
+         <li class="nav-link"><a href="/add">Add</a></li>
       </ul>
     </nav>
     
@@ -42,7 +43,6 @@
       </div>
 
           <% else %>          
-
              <%= form_for(resource, as: resource_name, url:session_path(resource_name)) do |f| %>  
         <div class="field">
             <%= f.email_field :email, autofocus: true, :placeholder => "Email" %> 
@@ -50,11 +50,10 @@
         <div class="field">
             <%= f.password_field :password, autocomplete: "off", :placeholder => "Password" %>
           </div>
-          <div class="actions">
-          <%= f.submit "Log in", :class => "submitbutton"  %>
-
-          <%= f.submit "Sign Up", :class => "submitbutton-signup"  %>
-            </div>
+        <div class="actions">
+          <%= f.submit "Log In", :class => "submitbutton"  %>
+          <%= link_to('Sign Up', new_user_registration_path,  :class => "Signup-link") %>
+        </div>
     <% end %>
     <%end%>
 

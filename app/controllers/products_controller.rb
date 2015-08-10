@@ -14,21 +14,23 @@ class ProductsController < ApplicationController
     end
   end
 
-  # def autocomplete_product_name
-  #   redirect_to products_url({product_name: params[:product_name]})
-  # end
-  
+  def create
+    @product = Product.new(product_params)
+    redirect_to '/dashboard'
+  end
 
   private
 
       def product_params
-        params.require(:name, :type).permit(:description, 
-                                            :category, 
-                                            :image_file_name, 
-                                            :image_updated_at,
-                                            :image_content_type,
-                                            :image_file_size,
-                                            :image_num)
+        params.require(:product).require(:name)
+        params.require(:product).permit(:category, :description,
+                      :name,
+                      :format, 
+                      :image_file_name, 
+                      :image_updated_at,
+                      :image_content_type,
+                      :image_file_size,
+                      :image_num)
       end
 end
 

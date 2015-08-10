@@ -1,3 +1,4 @@
+
 @import "bourbon";
 @import "base/base";
 @import "neat/neat";
@@ -10,5 +11,51 @@
  *= require jquery-ui/autocomplete
  */
 
+
+
+#subscription-page-wrapper {
+  padding: 10px;
+  width: 100%;
+  margin: 0 auto;
+  .signup-header {
+  text-align: center;
+    } 
+  input {
+ 
+    }
+}
+
+.text-field-wrapper {
+  width: 300px;
+  margin: 50px 0px 0px 575px;
+}
+
+.price-field-wrapper input {
+  width: 90px;
+  margin: 0px 5px 0px 575px;
+  padding-right: 0px;
+}
+
+.price-field-wrapper {
+  #every {
+    margin-left: 10px;
+    margin-right: 10px;
+    font-weight: lighter;
+    width: 40px;
+    display: inline;
+  }
+  #month {
+    display: inline;
+    font-weight: lighter;
+    margin-left: 8px;
+  }
+}
+
+#final-wrapper {
+  margin-left: 575px;
+  #required {
+    font-weight: lighter;
+  }
+}
 
 

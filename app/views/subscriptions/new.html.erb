@@ -1,5 +1,35 @@
-<h1>New Subscription</h1>
+<div id="subscription-page-wrapper">
+  
+  <h2 class="signup-header">Add Subscriptions</h2>
 
-<%= render 'form' %>
+  <div class="text-field-wrapper">
+    <%= form_for @product do |f| %>
+      
+      <%= f.text_field :name, :required => true, placeholder: "Product Name*" %><br>
+      <%= f.text_field :category, :required => true, placeholder: "Category*" %><br>
+      <%= f.text_field :description, placeholder: "Product Description" %> <br>
+  </div>
 
-<%= link_to 'Back', subscriptions_path %>
+    <div class="price-field-wrapper">
+      <%= f.fields_for :subscription do |subscriptions_form| %>
+        
+        <%= subscriptions_form.number_field :price, :required => true,  placeholder: "$10*" %>
+      <h5 id="every"> every </h>
+        <%= subscriptions_form.select(:month_interval, (0..12) ) %>
+      <h5 id="month">months</h>
+    </div> 
+
+  <div id="final-wrapper">
+    <h5 id="required">*Required field</h>
+    
+      <div class="actions">
+       <%= f.submit "Add Subscription" %>
+      </div>
+  
+  </div> 
+  
+    <% end %>
+
+    <% end %>
+
+</div>
