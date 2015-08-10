@@ -2,17 +2,18 @@
 
 
   
-  <div id="autocomplete_wrapper">
-    <!-- <span>Search:</span> -->
-    <%= form_tag "/products", method: :get, id: "autocomplete" do %>
-      <%= autocomplete_field_tag :product_name, '', autocomplete_product_name_products_path %>
-    <% end %>
-  </div>
 
 <div id="explore_container">
-  <div class="page-header"> Explore <br> 
 
   <div class="category_wrapper">
+    <div class="header-text"> Explore <br> </div>
+      <div id="autocomplete_wrapper">
+        <span> Search: </span>
+        <%= form_tag "/products", placeholder: 'Search', method: :get, id: "autocomplete" do %>
+          <%= autocomplete_field_tag :product_name, '', autocomplete_product_name_products_path %>
+        <% end %>
+      </div>
+
     <ul>
       <li> <%= link_to "Art & Culture", products_path({category: "Art & Culture"}) %> </li>
       <li> <%= link_to "Family & Kids", products_path({category: "Family & Kids"}) %> </li>

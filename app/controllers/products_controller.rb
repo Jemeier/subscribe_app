@@ -17,7 +17,7 @@ class ProductsController < ApplicationController
   # def autocomplete_product_name
   #   redirect_to products_url({product_name: params[:product_name]})
   # end
-
+  
 
   private
 
@@ -31,4 +31,5 @@ class ProductsController < ApplicationController
                                             :image_num)
       end
 end
+
 

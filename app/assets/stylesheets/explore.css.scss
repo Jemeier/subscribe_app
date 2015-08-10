@@ -5,12 +5,20 @@
 // }
 
 
+
+
 .category_wrapper {
   // border: 1px solid red;
   @include span-columns(10);
   @include omega();
   @include shift(1);
   padding-bottom: 40px;
+
+  .header-text {
+      font-size: 3em;
+      color: $light-blue;
+      font-weight: lighter;
+    }
 
   ul {
     text-align: center;
