@@ -312,3 +312,14 @@
   font-size: 2em;
   margin-top: 50px;
 }
+
+.Signup-link{
+position: absolute;
+top:60px;
+right: 300px;
+color: $dark-gray;
+  a{
+
+    color: $dark-gray;
+  }
+}
